@@ -9,10 +9,14 @@ import SwiftUI
 
 @main
 struct TestAppApp: App {
+    @StateObject private var appState = AppState()
     
     var body: some Scene {
         WindowGroup {
-            OnboardingView()
+            NavigationStack {
+                RootView()
+            }
+            .environmentObject(appState)
         }
     }
 }
